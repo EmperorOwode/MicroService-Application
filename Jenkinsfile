@@ -1,18 +1,18 @@
 pipeline {
     agent any
-    environment {
-        SCANNER_HOME = tool 'sonar-scanner'
+   // environment {
+       // SCANNER_HOME = tool 'sonar-scanner'
 
-   }
+ //  }
 
     stages {
-            stage('SonarQube') {
-             steps {
-                withSonarQubeEnv('sonar-scanner') {
-                    sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Microservice_Deployment -Dsonar.ProjectName=Microservice_Deployment -Dsonar.java.binaries=.'''
-                }
-            }
-        }
+         //   stage('SonarQube') {
+       //      steps {
+        //        withSonarQubeEnv('sonar-scanner') {
+          //          sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Microservice_Deployment -Dsonar.ProjectName=Microservice_Deployment -Dsonar.java.binaries=.'''
+            //    }
+         //   }
+       // }
             stage('adservice') {
               steps {
                script {
